@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutAlign="center">
+    <h1>Lista de productos:</h1>
+</div>
+
+<button mat-raised-button *ngFor="let list of listComponent">
+<app-product-list-items [listaItems]="list"></app-product-list-items>
+</button>

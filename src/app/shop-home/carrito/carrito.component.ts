@@ -1,0 +1,16 @@
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-carrito',
+  templateUrl: './carrito.component.html',
+  styleUrls: ['./carrito.component.scss']
+})
+export class CarritoComponent implements OnInit {
+
+  @Input() agregandoItem: string;
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
