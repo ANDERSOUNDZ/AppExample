@@ -11,9 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ShopHomeComponent } from './shop-home/shop-home.component';
 import { CarritoComponent } from './shop-home/carrito/carrito.component';
-import { ProductListItemsComponent } from './shop-home/productos/product-list-items/product-list-items.component';
 import { ProductosComponent } from './shop-home/productos/productos.component';
 import { FormsModule } from '@angular/forms';
+import { ProductListItemsComponent } from './shop-home/product-list-items/product-list-items.component';
 
 
 

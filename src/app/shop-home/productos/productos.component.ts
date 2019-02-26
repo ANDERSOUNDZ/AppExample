@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { detailsProductos } from 'src/app/model/descriptionProducts';
+import { ShoppingCartServiceService } from 'src/app/service/shopping-cart-service.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,6 +9,8 @@ import { detailsProductos } from 'src/app/model/descriptionProducts';
 })
 export class ProductosComponent implements OnInit {
   
+  datoHijo: detailsProductos;
+
   listComponent: detailsProductos[] = [
     
     {
@@ -29,10 +32,16 @@ export class ProductosComponent implements OnInit {
 ];
 
 
-  constructor() { }
+  constructor(public shoppingCartServiceService: ShoppingCartServiceService) { }
 
   ngOnInit() {
+
   }
 
+ funcCambiar(item){
 
+  //this.datoHijo=item;
+  
+  this.shoppingCartServiceService.cartData.push(item);
+ }
 }

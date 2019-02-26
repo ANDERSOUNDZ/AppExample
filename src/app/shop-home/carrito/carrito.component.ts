@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { detailsProductos } from 'src/app/model/descriptionProducts';
+import { ShoppingCartServiceService } from 'src/app/service/shopping-cart-service.service';
 
 @Component({
   selector: 'app-carrito',
@@ -8,31 +9,19 @@ import { detailsProductos } from 'src/app/model/descriptionProducts';
 })
 export class CarritoComponent implements OnInit {
 
-  listaItem : detailsProductos;
+  itemSeleccionado: detailsProductos;
 
-  listComponent: detailsProductos[] = [
-    
-    {
-    id: "01",
-    nameProduct: "Lavadora",
-    description: "Lavadora 29 libras / Mave/ 2019"
-    },
-    {
-      id: "02",
-      nameProduct: "Lavadora",
-      description: "Lavadora 29 libras / Mave/ 2019"
-    },
-    {
-        id: "03",
-        nameProduct: "Lavadora",
-        description: "Lavadora 29 libras / Mave/ 2019"
-    }
-    
-];
-
-  constructor() { }
+  constructor(public shoppingCartServiceService: ShoppingCartServiceService) { }
 
   ngOnInit() {
   }
+
+  funcCambiar(item){
+    this.itemSeleccionado = item;
+    const index = this.shoppingCartServiceService.cartData.indexOf(item);
+    this.shoppingCartServiceService.cartData.splice(index,1);
+  }
+ 
+
 
 }

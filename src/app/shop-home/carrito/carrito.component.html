@@ -2,6 +2,11 @@
     <h1>Productos del Carrito: </h1>
 </div>
 
+
+<app-product-list-items *ngFor="let item of shoppingCartServiceService.cartData" [(listaItems)]="item" (cambio)="funcCambiar($event)"></app-product-list-items>
+
+
+<!--
 <div *ngFor="let item of listComponent">
 
     <strong>Item Numero:</strong> {{item.id}} <br>
@@ -9,7 +14,7 @@
     <strong>Descripcion de producto:</strong><br> {{item.description}} <br><br>
 
 </div><br><br>
-
+-->
 
 
 

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output , EventEmitter} from '@angular/core';
 import { detailsProductos } from 'src/app/model/descriptionProducts';
+
 
 @Component({
   selector: 'app-product-list-items',
@@ -10,11 +11,15 @@ export class ProductListItemsComponent implements OnInit {
 
   @Input() listaItems : detailsProductos;
 
+  @Output() cambio = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  
+  cambiar(){
+    this.cambio.emit(this.listaItems);
+  }
 
 }
