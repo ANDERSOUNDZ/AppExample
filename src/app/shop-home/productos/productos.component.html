@@ -2,6 +2,4 @@
     <h1>Lista de productos:</h1>
 </div>
 
-<button mat-raised-button *ngFor="let list of listComponent">
-<app-product-list-items [listaItems]="list"></app-product-list-items>
-</button>
+<app-product-list-items *ngFor="let item of listComponent" [(listaItems)]="item" (onSelect)="agregarProducto" style="cursor: pointer"></app-product-list-items>

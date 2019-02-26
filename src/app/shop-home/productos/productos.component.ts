@@ -7,8 +7,6 @@ import { detailsProductos } from 'src/app/model/descriptionProducts';
   styleUrls: ['./productos.component.scss']
 })
 export class ProductosComponent implements OnInit {
-
-
   
   listComponent: detailsProductos[] = [
     

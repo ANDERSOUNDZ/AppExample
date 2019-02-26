@@ -2,7 +2,13 @@
     <h1>Productos del Carrito:</h1>
 </div>
 
-<mat-card [(ngModel)]="agregandoItem">Productos</mat-card>
+<div *ngFor="let item of listComponent">
+
+    <strong>Item Numero:</strong> {{item.id}} <br>
+    <strong>Nombre de Producto:</strong> {{item.nameProduct}} <br>
+    <strong>Descripcion de producto:</strong><br> {{item.description}}  
+
+</div><br>
 
 
 
